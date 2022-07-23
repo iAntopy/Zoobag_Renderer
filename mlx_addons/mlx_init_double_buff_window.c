@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 04:01:40 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/07/05 04:01:48 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/07/22 22:26:25 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ static int	init_screen_buffers(t_mlx *mlx, t_img *b1, t_img *b2)
 //Declare a t_mlx variable in main and pass its pointer to this function.
 t_mlx	*mlx_init_double_buff_window(t_mlx *mlx, int width, int height, char *title)
 {
-	t_img	*b1;
-	t_img	*b2;
-
 	mlx->mlx = mlx_init();
 	if (!mlx->mlx)
 		return (NULL);
