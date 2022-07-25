@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:32:17 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/07/05 04:00:59 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/07/23 12:37:54 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define MLXADDS_H
 
 # include <stdlib.h>
+# include <stdio.h>
+# include "libft.h"
 
 enum	e_event_codes
 {
@@ -38,7 +40,7 @@ typedef struct	s_img_data
 
 typedef struct	s_mlx_data
 {
-	void	*mlx;
+	void	*conn;
 	void	*win;
 	int	width;
 	int	height;

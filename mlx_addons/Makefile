@@ -1,21 +1,23 @@
-SRCS	= $(wildcard *.c)
+#SRCS	= $(wildcard *.c)
+SRCS	:= $(filter-out $(wildcard *test.c), $(wildcard *.c))
 
 OBJS	= $(SRCS:.c=.o)
 
 INCLS	= includes/
-LIBS	= ../libmlx.a ../libft.a
+
+#LIB_DIR	= ../libs/
+#LIBS	= ../libs/libmlx.a ../libs/libft.a
 
 CC	= gcc
-#CFLAGS	= -Wall -Wextra -Werror -I$(INCLS) -L../ -lmlx -lft 
+CFLAGS	= -Wall -Wextra -Werror -I$(INCLS)# $(LIBS)
 #CFLAGS	= -I$(INCLS) -L../ -lmlx -lft 
-CFLAGS	= -I$(INCLS)
 
 AR	= ar -rcs
 
 NAME	= libmlxadds.a
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) $(LIBS)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS)
 #	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
