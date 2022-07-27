@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:38:30 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/07/23 12:13:07 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:30:05 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 int	on_close(t_mlx *mlx)
 {
 	printf("CLOSE EVENT REGISTERED. CLOSING ...");
+	mlx_close(mlx);
+	/*
 	if (mlx->screen_buff)
 		mlx_destroy_image(mlx->conn, mlx->screen_buff->img);
 	if (mlx->off_buff)
@@ -28,6 +30,7 @@ int	on_close(t_mlx *mlx)
 	mlx->off_buff = NULL;
 	mlx_destroy_window(mlx->conn, mlx->win);
 	mlx_destroy_display(mlx->conn);
+	*/
 	return (0);
 }
 
@@ -62,6 +65,7 @@ int	on_keypress(int keycode, t_mlx *mlx)
 int	on_click(int button, int x, int y, t_mlx *mlx)
 {
 	printf("button %d clicked at (%d, %d)\n", button, x, y);
+	return (0);
 }
 
 int	on_update(t_mlx *mlx)

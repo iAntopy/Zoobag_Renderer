@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 02:09:01 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/07/05 02:27:58 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/07/26 23:49:49 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void	mlx_clear_buffer(t_mlx *mlx)
 	size_t	s;
 	char	*c;
 
+	if (!mlx->off_buff)
+	{
+		printf("OOPS ! no off_buff\n");
+		return ;
+	}
+	printf("Attempting to clear buffer\n");
 	total_bytes = mlx->buff1.line_len * mlx->height;
 	b = (size_t *)mlx->off_buff->addr;
 	s = sizeof(size_t);
