@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 04:01:40 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/07/23 11:45:08 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:04:52 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	init_screen_buffers(t_mlx *mlx, t_img *b1, t_img *b2)
 	b2->bytes_per_pxl /= 8;
 	mlx->screen_buff = &mlx->buff1;
 	mlx->off_buff = &mlx->buff2;
+	mlx->buff_size = b1->line_len * mlx->height;
 	return (1);
 }
 

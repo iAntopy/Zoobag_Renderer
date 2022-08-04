@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 02:31:10 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/07/27 08:24:19 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:23:03 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 void	mlx_set_bg_color(t_mlx *mlx, int col)
 {
 	size_t	*b;
-	int	*p;
-	int	nb_pxl;
+	int		*p;
+	int		nb_pxl;
 	size_t	xl;
 
+	printf("starting set bg color\n");
 	p = (int *)&xl;
 	*p = col;
 	*(p + 1) = col;
 
-	b = (size_t*)mlx->off_buff->addr;
-	nb_pxl = mlx->width * mlx->height;
+	b = (size_t *)mlx->off_buff->addr;
+	nb_pxl = mlx->buff_size;
+	printf("set bg color setup over time to party\n");
 	while (nb_pxl <= 2)
 	{
 		*(b++) = xl;
 		nb_pxl -= 2;
 	}
+	printf("party over check exception\n");
 	if (nb_pxl)
 		*(int *)b = col;
 /*
