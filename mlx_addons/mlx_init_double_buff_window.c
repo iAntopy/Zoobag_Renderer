@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 04:01:40 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/08/04 17:06:39 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/08/06 15:34:40 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ static int	init_screen_buffers(t_mlx *mlx, t_img *b1, t_img *b2)
 		&b2->line_len, &b2->endian);
 	b1->bytes_per_pxl /= 8;
 	b2->bytes_per_pxl /= 8;
+	printf("bytes per pixel : %d\n", b1->bytes_per_pxl);
 	mlx->screen_buff = &mlx->buff1;
 	mlx->off_buff = &mlx->buff2;
 	mlx->nb_pix = mlx->width * mlx->height;
 	mlx->buff_size = b1->line_len * mlx->height;
+	printf("init_creen_buffer : mlx->buff_size : %zu\n", mlx->buff_size);
 	return (1);
 }
 
