@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 04:01:40 by iamongeo          #+#    #+#             */
-/*   Updated: 2022/08/06 15:34:40 by iamongeo         ###   ########.fr       */
+/*   Updated: 2022/08/08 23:41:51 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	init_screen_buffers(t_mlx *mlx, t_img *b1, t_img *b2)
 	mlx->off_buff = &mlx->buff2;
 	mlx->nb_pix = mlx->width * mlx->height;
 	mlx->buff_size = b1->line_len * mlx->height;
-	printf("init_creen_buffer : mlx->buff_size : %zu\n", mlx->buff_size);
+	printf("init_screen_buffer : mlx->buff_size : %zu\n", mlx->buff_size);
 	return (1);
 }
 
